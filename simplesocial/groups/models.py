@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils.text import slugify
 import misaka
+from misaka import HtmlRenderer
 from django.contrib.auth import get_user_model
 from django import template
+from django.urls import reverse
 
 # Create your models here.
 User = get_user_model()
