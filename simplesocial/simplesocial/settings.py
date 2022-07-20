@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'groups',
     'posts',
     'misaka',
+    'weather',
 ]
 
 MIDDLEWARE = [
