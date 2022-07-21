@@ -7,7 +7,6 @@ from django.views import generic
 from django.http import Http404
 from braces.views import SelectRelatedMixin
 from . import models
-from . import forms
 
 # Create your views here.
 User = get_user_model()

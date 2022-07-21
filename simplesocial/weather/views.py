@@ -3,6 +3,8 @@ import requests
 
 # Create your views here.
 
+something = "some Text"
+
 def weather_app(request):
     api_key = "b308b202b15b9f5a0867ea98aafbe002"
     city = "Vilnius"
