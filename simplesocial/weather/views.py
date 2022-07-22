@@ -7,19 +7,24 @@ something = "some Text"
 
 def weather_app(request):
     api_key = "b308b202b15b9f5a0867ea98aafbe002"
-    city = "Vilnius"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    cities = ["Vilnius", "Kaunas", "London", "Paris", "Tokyo", "Sydney", "Mumbai", "Malibu", "Nook", "Kyiv"]
 
-    r = requests.get(url).json()
+    weather_data = []
 
-    city_weather = {
-        "city": city,
-        "temperature": r['main']['temp'],
-        "description": r['weather'][0]['description'],
-        "icon": r['weather'][0]['icon'],
-    }
+    for city in cities:
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+        r = requests.get(url).json()
 
-    context = {"city_weather": city_weather}
+        city_weather = {
+            "city": city,
+            "temperature": r['main']['temp'],
+            "description": r['weather'][0]['description'],
+            "icon": r['weather'][0]['icon'],
+        }
+
+        weather_data.append(city_weather)
+
+    context = {"city_weather": city_weather, "weather_data": weather_data}
     return render(request, "weather/weather.html", context)
 
 
