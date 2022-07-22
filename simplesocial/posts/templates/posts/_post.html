@@ -7,7 +7,7 @@
             <a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
         </span>
         <time class="time">
-            <a href="{% url 'posts:single' username=user.username pk=post.pk %}">{{post.created_at}}</a>
+            <a href="{% url 'posts:single' username=user.username pk=object.pk %}">{{post.created_at}}</a>
         </time>
         </h5>
         <div class="media-footer">
