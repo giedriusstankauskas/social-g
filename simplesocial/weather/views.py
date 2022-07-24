@@ -1,13 +1,14 @@
 from django.shortcuts import render
 import requests
 
-# Create your views here.
-
-something = "some Text"
 
 def weather_app(request):
     api_key = "b308b202b15b9f5a0867ea98aafbe002"
-    cities = ["Vilnius", "Kaunas", "London", "Paris", "Tokyo", "Sydney", "Mumbai", "Malibu", "Nook", "Kyiv"]
+    cities = [
+        "Vilnius", "Antarctica", "London", "Paris", "Tokyo",
+        "Sydney", "Mumbai", "Malibu", "Nuuk", "Kyiv",
+        "Johannesburg", "Lima", "Juneau", "Yakutsk", "Oymyakon"
+    ]
 
     weather_data = []
 
@@ -24,7 +25,7 @@ def weather_app(request):
 
         weather_data.append(city_weather)
 
-    context = {"city_weather": city_weather, "weather_data": weather_data}
+    context = {"weather_data": weather_data}
     return render(request, "weather/weather.html", context)
 
 

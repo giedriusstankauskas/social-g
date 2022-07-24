@@ -1,6 +1,15 @@
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: scroll;
     background-color: black;
     color:white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.float-child {
+    width: 19%;
+    float: left;
+    padding: 20px;
+    margin: 1px;
+    background:#1e1e1e;
 }
