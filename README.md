@@ -1,3 +1,3 @@
 # G-Social - place for your ideas
 
-![](images/groupsscr.png)
+![](images/groupsscr1.png)
