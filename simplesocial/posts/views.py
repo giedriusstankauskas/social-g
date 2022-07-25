@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from django.contrib import messages
@@ -8,7 +7,6 @@ from django.http import Http404
 from braces.views import SelectRelatedMixin
 from . import models
 
-# Create your views here.
 User = get_user_model()
 
 

@@ -1,14 +1,12 @@
-from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse
 from django.views import generic
-
 from . import models
 from .models import Group, GroupMember
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
-# Create your views here.
+
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
     fields = ("name", "description")
     model = Group
@@ -46,7 +44,6 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
         return reverse("groups:single", kwargs={"slug":self.kwargs.get("slug")})
 
     def get(self, request, *args, **kwargs):
-
         try:
             membership = models.GroupMember.objects.filter(
                 user=self.request.user,
